@@ -9,16 +9,16 @@
      <class>com.microapps.ebusiness.mystore.application.entity.BusinessUser</class>
      <class>com.microapps.ebusiness.mystore.application.entity.Customer</class>
      <class>com.microapps.ebusiness.mystore.application.entity.ItemGroup</class>
-    <!--  <properties>
+    <properties>
        <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
-       <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/myshop-db"/>
+       <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/mystore-db"/>
        <property name="javax.persistence.jdbc.user" value="sa"/>
        <property name="javax.persistence.jdbc.password" value="sa"/>
        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
        <property name="hibernate.hbm2ddl.auto" value="update" />
        <property name="show_sql" value="true"/>
-     </properties> -->
-     <properties>
+     </properties>
+    <!--  <properties>
        <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/my-shop-test-db"/>
        <property name="javax.persistence.jdbc.user" value="root"/>
@@ -26,6 +26,6 @@
        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
        <property name="hibernate.hbm2ddl.auto" value="update" />
        <property name="show_sql" value="true"/>
-     </properties>
+     </properties> -->
     </persistence-unit>
 </persistence>
