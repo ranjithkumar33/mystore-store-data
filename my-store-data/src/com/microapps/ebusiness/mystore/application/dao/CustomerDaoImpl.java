@@ -51,7 +51,7 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 		Map<String, Object> params = new HashMap<>();
 		params.put("mobile", mobile);
 		List<Customer> list = findAll(Customer.class, "SELECT c FROM Customer c WHERE c.mobile =:mobile", params);
-		if(list != null) {
+		if(list != null && !list.isEmpty()) {
 			return list.get(0);
 		}
 		return null;

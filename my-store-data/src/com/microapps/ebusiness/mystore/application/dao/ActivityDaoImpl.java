@@ -25,7 +25,7 @@ public class ActivityDaoImpl extends BaseDaoImpl<Activity> implements ActivityDa
 
 	@Override
 	public List<Activity> findMonthlyActivities() {
-		return findAll(Activity.class, "SELECT new Activity(SUM(a.amount), a.createdOn) FROM Activity a WHERE a.name = 'New sale' GROUP BY a.createdOn", null);
+		return findAll(Activity.class, "SELECT new com.microapps.ebusiness.mystore.application.entity.Activity(SUM(a.amount), a.createdOn) FROM Activity a WHERE a.name = 'New sale' GROUP BY a.createdOn", null);
 	}
 	 
 }

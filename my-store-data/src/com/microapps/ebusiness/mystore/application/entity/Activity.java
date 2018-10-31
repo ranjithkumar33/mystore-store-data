@@ -21,9 +21,9 @@ public class Activity {
 			
 	}
 	
-	public Activity(float amount, Timestamp createdOn) {
-		this.amount=amount;
-		this.createdOn=createdOn;
+	public Activity(Double amount, java.util.Date createdOn) {
+		this.totalPurchaseAmount=amount;
+		this.createdOn=new Timestamp(createdOn.getTime());
 }
 	
 
@@ -65,6 +65,17 @@ public class Activity {
 	
 	@Column(name = "created_by")
 	private String createdBy;
+	
+	@Transient
+	private Double totalPurchaseAmount;
+
+	public Double getTotalPurchaseAmount() {
+		return totalPurchaseAmount;
+	}
+
+	public void setTotalPurchaseAmount(Double totalPurchaseAmount) {
+		this.totalPurchaseAmount = totalPurchaseAmount;
+	}
 
 	public long getId() {
 		return id;
