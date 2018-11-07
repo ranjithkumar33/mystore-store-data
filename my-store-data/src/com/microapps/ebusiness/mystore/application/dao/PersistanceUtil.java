@@ -13,8 +13,8 @@ public final class PersistanceUtil {
 	
 	private EntityManagerFactory sessionFactory;
 	
-	public final void setPersistance() {
-		if(sessionFactory == null) sessionFactory=Persistence.createEntityManagerFactory("my-store-db");
+	public final void setPersistance(String persistanceUnit) {
+		if(sessionFactory == null) sessionFactory= Persistence.createEntityManagerFactory(persistanceUnit);
 	}
 	
 	public final EntityManagerFactory getPersistance() {

@@ -47,25 +47,27 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 	}
 
 	@Override
-	public Customer searchCustomerByMobile(String mobile) {
+	public Customer searchCustomerByMobile(String mobile) throws RecordNotFoundException {
 		Map<String, Object> params = new HashMap<>();
 		params.put("mobile", mobile);
 		List<Customer> list = findAll(Customer.class, "SELECT c FROM Customer c WHERE c.mobile =:mobile", params);
 		if(list != null && !list.isEmpty()) {
 			return list.get(0);
+		}else {
+			throw new RecordNotFoundException("No customer found");
 		}
-		return null;
 	}
 
 	@Override
-	public Customer searchCustomerByCard(String card) {
+	public Customer searchCustomerByCard(String card) throws RecordNotFoundException {
 		Map<String, Object> params = new HashMap<>();
 		params.put("cardNumber", card);
 		List<Customer> list = findAll(Customer.class, "SELECT c FROM Customer c WHERE c.cardNumber =:cardNumber", params);
 		if(list != null) {
 			return list.get(0);
+		}else {
+			throw new RecordNotFoundException("No customer found");
 		}
-		return null;
 	}
 
 	@Override

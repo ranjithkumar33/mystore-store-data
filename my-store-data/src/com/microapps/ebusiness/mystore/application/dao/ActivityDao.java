@@ -8,8 +8,10 @@ public interface ActivityDao {
 	
 	 Activity saveActivity(Activity a);
 	 
-	 List<Activity> findActivitiesByCustomer(int customerId);
+	 List<Activity> findActivitiesByCustomer(long customerId);
 	 
-	 List<Activity> findMonthlyActivities();
+	 List<Activity> findDailySaleRevenue();
+	 
+	 double findTotalRevenueFromSale();
 
 }

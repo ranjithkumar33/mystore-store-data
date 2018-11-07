@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="my-store-data" default="obfuscate-jar" basedir="." >
+
+	<property name="name" value="my-store-data-1.0.0"/>
+	<target name="init">
+		<mkdir dir="build/classes" />
+		<mkdir dir="build/lib" />
+		<mkdir dir="dist" />
+
+		<copy todir="build/lib">
+			<fileset dir="lib">
+				<filename name="*.jar"/>
+			</fileset>
+	    </copy>
+		
+	</target>
+
+	<target name="compile" depends="init">
+		<javac includeantruntime="false" srcdir="src" destdir="build/classes" target="1.8" encoding="Cp1252">
+			<classpath>
+					<fileset dir="build/lib">
+						<include name="*"/>
+					</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="dist/${name}.jar" basedir="build/classes" >
+			<fileset dir="src">
+				 <include name="META-INF/persistence.xml"/>
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="clean">
+		<delete dir="build" />
+		<delete dir="dist" />
+	</target>
+	
+	<target name="obfuscate-jar" depends="jar">
+		<!-- obfuscate and optimize by ProGuard -->
+		<taskdef resource="proguard/ant/task.properties" classpath="build/lib/proguard.jar" />
+		<proguard configuration="proguard-conf.properties">
+		</proguard>
+	</target>
+
+</project>

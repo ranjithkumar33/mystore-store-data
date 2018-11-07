@@ -24,8 +24,11 @@ public class Activity {
 	public Activity(Double amount, java.util.Date createdOn) {
 		this.totalPurchaseAmount=amount;
 		this.createdOn=new Timestamp(createdOn.getTime());
-}
+    }
 	
+	public Activity(Double amount) {
+		this.totalPurchaseAmount=amount;
+    }
 
 	public Activity(String name, Customer customer, String itemGroup, float amount, int earnedPoints, String createdBy) {
 			this.name=name;
