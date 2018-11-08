@@ -13,5 +13,6 @@ public interface ActivityDao {
 	 List<Activity> findDailySaleRevenue();
 	 
 	 double findTotalRevenueFromSale();
-
+	 
+	 List<Activity> findDailyItemSales();
 }

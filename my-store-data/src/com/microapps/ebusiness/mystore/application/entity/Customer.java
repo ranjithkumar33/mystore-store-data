@@ -24,12 +24,13 @@ public class Customer {
 		
 	}
 	
-	public Customer(Long id, String name, java.util.Date createdOn, Double totalPurchaseAmount, Character gender) {
+	public Customer(Long id, String name, java.util.Date createdOn, Double totalPurchaseAmount, Character gender, Boolean status) {
 		this.name=name;
 		this.id=id;
 		this.createdOn=new Timestamp(createdOn.getTime());
 		this.totalPurchaseAmount=totalPurchaseAmount;
 		this.gender=gender;
+		this.status=status;
 	}
 	
 	

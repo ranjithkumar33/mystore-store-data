@@ -37,5 +37,10 @@ public class ActivityDaoImpl extends BaseDaoImpl<Activity> implements ActivityDa
 		}
 		return 0;
 	}
+
+	@Override
+	public List<Activity> findDailyItemSales() {
+		return findAll(Activity.class, "SELECT new com.microapps.ebusiness.mystore.application.entity.Activity(a.itemGroup, SUM(a.amount), a.createdOn) FROM Activity a WHERE a.name = 'New sale' GROUP BY a.createdOn, a.itemGroup", null);
+	}
 	 
 }

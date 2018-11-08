@@ -72,7 +72,7 @@ public class CustomerDaoImpl extends BaseDaoImpl<Customer> implements CustomerDa
 
 	@Override
 	public List<Customer> findAllCustomers() {
-		return findAll(Customer.class, "SELECT new com.microapps.ebusiness.mystore.application.entity.Customer(c.id, c.name, c.createdOn, SUM(a.amount), c.gender) from Customer c LEFT JOIN c.activities a on a.customer.id=c.id and a.name = 'New sale' GROUP BY c.id ", null);
+		return findAll(Customer.class, "SELECT new com.microapps.ebusiness.mystore.application.entity.Customer(c.id, c.name, c.createdOn, SUM(a.amount), c.gender, c.status) from Customer c LEFT JOIN c.activities a on a.customer.id=c.id and a.name = 'New sale' GROUP BY c.id ", null);
 	}
 
 	@Override

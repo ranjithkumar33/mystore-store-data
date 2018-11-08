@@ -26,6 +26,13 @@ public class Activity {
 		this.createdOn=new Timestamp(createdOn.getTime());
     }
 	
+	public Activity(String itemGroup, Double amount, java.util.Date createdOn) {
+		this.itemGroup=itemGroup;
+		this.totalPurchaseAmount=amount;
+		this.createdOn=new Timestamp(createdOn.getTime());
+    }
+	
+	
 	public Activity(Double amount) {
 		this.totalPurchaseAmount=amount;
     }
